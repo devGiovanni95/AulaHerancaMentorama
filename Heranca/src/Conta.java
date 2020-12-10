@@ -1,9 +1,9 @@
 
-public  class Conta {
+public abstract class Conta {
     private int numero;
     private int agencia;
     private String banco;
-    private double saldo;
+    protected double saldo;/* private so e disponivel dentro da propria conta*/
 
     public int getNumero() {
         return numero;
@@ -29,9 +29,15 @@ public  class Conta {
         this.banco = banco;
     }
 
-    public double getSaldo() {
+   public abstract double getSaldo();
+    /* como o get saldo sera uma classe abstrata por ter uma funcao
+     e mostrar um valor especifico
+    em cada tipo de conta ele se torna uma classe abtrata
+    sendo assim ele nao podera retornar nada
+
+    {
         return saldo;
-    }
+    }*/
 
     public void setSaldo(double saldo) {
         this.saldo = saldo;
