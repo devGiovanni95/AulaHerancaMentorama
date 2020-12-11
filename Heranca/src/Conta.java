@@ -4,6 +4,10 @@ public abstract class Conta {
     private int agencia;
     private String banco;
     protected double saldo;/* private so e disponivel dentro da propria conta*/
+    protected double sacar;
+    protected double depositar;
+    protected  double saldoAtualizado;
+
 
     public int getNumero() {
         return numero;
@@ -43,20 +47,42 @@ public abstract class Conta {
         this.saldo = saldo;
     }
 
-    public Conta(int numero, int agencia, String banco, double saldo) {
+    public abstract double getSacar();
+
+    public void setSacar(double sacar) {
+        this.sacar = sacar;
+    }
+
+    public abstract double getDepositar();
+
+    public void setDepositar(double depositar) {
+        this.depositar = depositar;
+    }
+
+    public abstract double getSaldoAtualizado();
+
+    public void setSaldoAtualizado(double saldoAtualizado) {
+        this.saldoAtualizado = saldoAtualizado;
+    }
+
+    public Conta(int numero, int agencia, String banco, double saldo, double sacar, double depositar) {
         this.numero = numero;
         this.agencia = agencia;
         this.banco = banco;
         this.saldo = saldo;
+        this.sacar = sacar;
+        this.depositar = depositar;
     }
 
     @Override
     public String toString() {
         return "Conta{" +
-                "numero = " + numero +
-                ", agencia = " + agencia +
-                ", banco = '" + banco + '\'' +
-                ", saldo = " + saldo +
+                "numero=" + numero +
+                ", agencia=" + agencia +
+                ", banco='" + banco + '\'' +
+                ", saldo=" + saldo +
+                ", sacar=" + sacar +
+                ", depositar=" + depositar +
                 '}';
     }
 }
