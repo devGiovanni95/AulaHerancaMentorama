@@ -38,6 +38,10 @@ public class ContaCorrente extends Conta{
 
     @Override
     public double getSaldoAtualizado() {
-        return (this.getSaldo() + this.depositar - this.getSacar());
+        if (getSacar() <= getSaldo() ) {
+            return this.getSaldo() + this.depositar - this.getSacar();
+        }else {
+            return this.getSaldo() + this.depositar;
+        }
     }
 }

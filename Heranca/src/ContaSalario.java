@@ -11,17 +11,17 @@ public class ContaSalario extends Conta {
     @Override
 
     public double getSaldo() {
-        return 0;
+        return saldo;
     }
 
     @Override
     public double getSacar() {
-        return 0;
+        return sacar;
     }
 
     @Override
     public double getDepositar() {
-        return 0;
+        return depositar;
     }
 
     @Override
